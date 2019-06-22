@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="andrej.com.musicmanagement.searchfragment.viewModel.ArtistViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/root_item"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <andrej.com.musicmanagement.view.ImageLoaderImageView
+            android:id="@+id/artist_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            app:placeHolder="@{model.placeholder}"
+            app:url="@{model.artistImage}" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/artist_name"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:padding="1dp"
+                android:text="@{model.artistName}"
+                tools:text="Eminem"
+                android:textSize="20sp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/text_color"
+                android:maxLines="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/artist_listeners"
+                android:layout_below="@id/artist_name"
+                android:padding="1dp"
+                android:text="@{model.artistListeners}"
+                tools:text="100000000"
+                android:textColor="@color/text_color"
+                android:textSize="18sp"
+                android:textAlignment="viewStart"
+                android:maxLines="1"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

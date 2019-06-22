@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/root_item"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <andrej.com.musicmanagement.view.ImageLoaderImageView
+            android:id="@+id/album_img"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerCrop" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/album_name"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:padding="1dp"
+                android:layout_centerHorizontal="true"
+                tools:text="Recovery"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:textColor="@color/text_color"
+                android:maxLines="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/album_playcount"
+                android:layout_below="@id/album_name"
+                android:layout_centerHorizontal="true"
+                android:padding="1dp"
+                tools:text="100000000"
+                android:textColor="@color/text_color"
+                android:textSize="18sp"
+                android:textAlignment="viewStart"
+                android:maxLines="1"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/btn_favorite"
+            android:layout_width="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/btn_favorite_selector"
+            android:layout_height="60dp" />
+
+    </LinearLayout>
+</layout>

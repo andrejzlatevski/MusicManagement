@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MusicManagement</string>
+    <string name="search">Search artist…</string>
+
+    <string name="artist_not_found">Artist not found.</string>
+
+    <string name="searching_artists">Searching for artists…</string>
+    <string name="searching_albums">Searching for top albums…</string>
+    <string name="btn_search">Search</string>
+    <string name="search_albums">%1$s albums</string>
+    <string name="saved_albums">Saved albums</string>
+    <string name="album_saved">Album successfully saved.</string>
+    <string name="album_deleted">Album successfully deleted.</string>
+</resources>
