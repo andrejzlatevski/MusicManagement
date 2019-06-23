@@ -113,6 +113,9 @@ public class MainFragment extends BaseFragment<MainContract.Presenter> implement
 
     @Override
     public void notifyAlbumsLoaded(List<Album> albums) {
+        if(albums.size()>0){
+            mBindingObject.emptyState.setVisibility(View.GONE);
+        }
         mAlbumsAdapter.add(albums);
     }
 

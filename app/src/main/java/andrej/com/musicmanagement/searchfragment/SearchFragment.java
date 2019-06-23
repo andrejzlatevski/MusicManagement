@@ -87,6 +87,9 @@ public class SearchFragment extends BaseFragment<SearchContract.Presenter> imple
         mBindingObject.artists.setLayoutManager(llm);
         mBindingObject.artists.addItemDecoration(new VerticalSpaceItemDecoration((int) getResources().getDimension(R.dimen.margin_small)));
         mBindingObject.artists.setAdapter(mResultsAdapter);
+        if(mResultsAdapter.getItemCount()>0){
+            mBindingObject.emptyState.setVisibility(View.GONE);
+        }
         return mBindingObject.getRoot();
     }
 
@@ -145,6 +148,9 @@ public class SearchFragment extends BaseFragment<SearchContract.Presenter> imple
     @Override
     public void notifyArtistsLoaded(List<Artist> artists) {
         hideProgressDialog();
+        if(artists.size()>0){
+            mBindingObject.emptyState.setVisibility(View.GONE);
+        }
         mResultsAdapter.add(artists);
     }
 
