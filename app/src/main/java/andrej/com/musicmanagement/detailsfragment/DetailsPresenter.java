@@ -65,6 +65,7 @@ public class DetailsPresenter extends BaseScreenPresenter<DetailsContract.View> 
                     @Override
                     public void onComplete() {
                         if (getView()!=null){
+                            getView().notifyAlbumIsFavorite(true);
                             getView().notifyActionCompleted(context.getResources().getString(R.string.album_saved));
                         }
                     }
@@ -72,7 +73,9 @@ public class DetailsPresenter extends BaseScreenPresenter<DetailsContract.View> 
                     @Override
                     public void onError(Throwable e) {
                         if (getView()!=null){
-                            getView().notifyActionCompleted(e.getMessage());
+                            getView().notifyAlbumIsFavorite(false);
+                            getView().notifyError(e.getMessage());
+                            getView().notifyActionCompleted(context.getResources().getString(R.string.error_saving));
                         }
                     }
                 });
@@ -96,6 +99,7 @@ public class DetailsPresenter extends BaseScreenPresenter<DetailsContract.View> 
               @Override
               public void onComplete() {
                    if (getView()!=null){
+                       getView().notifyAlbumIsFavorite(false);
                        getView().notifyActionCompleted(context.getResources().getString(R.string.album_deleted));
                    }
               }
@@ -103,7 +107,9 @@ public class DetailsPresenter extends BaseScreenPresenter<DetailsContract.View> 
               @Override
               public void onError(Throwable e) {
                   if (getView()!=null){
-                      getView().notifyActionCompleted(e.getMessage());
+                      getView().notifyAlbumIsFavorite(true);
+                      getView().notifyError(e.getMessage());
+                      getView().notifyActionCompleted(context.getResources().getString(R.string.error_deleting));
                   }
               }
           });
@@ -130,6 +136,7 @@ public class DetailsPresenter extends BaseScreenPresenter<DetailsContract.View> 
                     @Override
                     public void accept(Throwable throwable) throws Exception {
                         if(getView()!=null){
+                            getView().notifyAlbumIsFavorite(false);
                             getView().notifyError(throwable.getMessage());
                         }
                     }

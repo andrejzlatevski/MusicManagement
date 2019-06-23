@@ -14,4 +14,7 @@
 
     <string name="empty_state_main">You don\'t have any albums.</string>
     <string name="search_for_artist">You can search for artist here.</string>
+
+    <string name="error_saving">Error happened when trying to save the album. Please try again.</string>
+    <string name="error_deleting">Error happened when trying to delete the album. Please try again.</string>
 </resources>

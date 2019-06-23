@@ -87,13 +87,11 @@ public class DetailsFragment extends BaseFragment<DetailsContract.Presenter> imp
         mBindingObject.btnFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                isSaved = !isSaved;
-                if(isSaved){
+                if(!isSaved){
                     presenter.saveAlbumToDatabase(mAlbum);
                 }else {
                     presenter.deleteAlbum(mAlbum);
                 }
-                mBindingObject.btnFavorite.setSelected(isSaved);
             }
         });
         return mBindingObject.getRoot();
