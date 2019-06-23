@@ -78,9 +78,15 @@ public class DetailsFragment extends BaseFragment<DetailsContract.Presenter> imp
         toolBarOwner.showBackButton();
         isSaved = false;
         presenter.checkIsAlbumFavorite(mAlbum);
-        mBindingObject.albumName.setText(mAlbum.getName());
+        if(mAlbum.getName()!=null){
+            mBindingObject.albumName.setText(mAlbum.getName());
+        }else {
+            mBindingObject.albumName.setText(getResources().getString(R.string.unknown_album));
+        }
         if(mAlbum.getAlbumArtist()!=null && mAlbum.getAlbumArtist().getName()!=null){
             mBindingObject.albumArtist.setText(mAlbum.getAlbumArtist().getName());
+        }else {
+            mBindingObject.albumArtist.setText(getResources().getString(R.string.unknown_artist));
         }
         mBindingObject.albumPlaycount.setText(String.valueOf(mAlbum.getPlaycount()));
         imageLoader.displayImage(mBindingObject.albumImg, new ImageLoader.LoadingBuilder().setUrl(mAlbum.getAlbumImage().get(0).getText()).setPlaceHolder(R.drawable.image_placeholder));

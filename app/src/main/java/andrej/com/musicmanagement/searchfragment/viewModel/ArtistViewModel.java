@@ -29,7 +29,7 @@ public class ArtistViewModel extends BaseObservable {
         if (artist.getName() != null) {
             return artist.getName();
         }
-        return "";
+        return mContext.getResources().getString(R.string.unknown_artist);
     }
 
     @Bindable

@@ -12,6 +12,9 @@
     <string name="album_saved">Album successfully saved.</string>
     <string name="album_deleted">Album successfully deleted.</string>
 
+    <string name="unknown_artist">Unknown artist</string>
+    <string name="unknown_album">Unknown album</string>
+
     <string name="empty_state_main">You don\'t have any albums.</string>
     <string name="search_for_artist">You can search for artist here.</string>
 

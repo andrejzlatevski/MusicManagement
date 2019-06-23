@@ -29,7 +29,7 @@ public class TopAlbumViewModel extends BaseObservable {
         if (album.getName() != null) {
             return album.getName();
         }
-        return "";
+        return mContext.getResources().getString(R.string.unknown_album);
     }
 
     @Bindable
