@@ -14,16 +14,16 @@
             android:layout_height="wrap_content"
             android:theme="@style/AppTheme.AppBarOverlay"
             android:background="@color/blueColor"
-            android:elevation="0dp"
-            app:elevation="0dp"
+            android:elevation="@dimen/zero_dp"
+            app:elevation="@dimen/zero_dp"
             android:visibility="gone">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?android:actionBarSize"
-                android:elevation="0dp"
-                app:elevation="0dp">
+                android:elevation="@dimen/zero_dp"
+                app:elevation="@dimen/zero_dp">
 
                 <RelativeLayout
                     android:id="@+id/toolbar_custom_holder"
@@ -40,7 +40,7 @@
                         android:layout_centerVertical="true"
                         android:textAlignment="center"
                         android:gravity="center"
-                        android:textSize="15sp"
+                        android:textSize="@dimen/normal_text_size"
                         android:textStyle="bold"
                         android:textColor="@color/whiteColor"
                         android:text="" />
@@ -53,14 +53,14 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textColor="@android:color/white"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/tittle_text_size"
                     tools:text="Toolbar Title" />
             </android.support.v7.widget.Toolbar>
             <View
                 android:id="@+id/grey_line_toolbar"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="@dimen/one_dp"
                 android:background="#FFAAAAAA" />
         </android.support.design.widget.AppBarLayout>
 
@@ -76,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|bottom"
-            android:layout_marginBottom="150dp"
+            android:layout_marginBottom="@dimen/toast_message_margin_bottom"
             android:layout_marginEnd="@dimen/toast_message_margin"
             android:layout_marginStart="@dimen/toast_message_margin"
             android:background="@drawable/toast_message_bg"

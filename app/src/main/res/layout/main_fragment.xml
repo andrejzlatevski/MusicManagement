@@ -24,9 +24,9 @@
 
             <ImageView
                 android:id="@+id/empty_image"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="120dp"
+                android:layout_width="@dimen/image_size"
+                android:layout_height="@dimen/image_size"
+                android:layout_marginTop="@dimen/image_size"
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/ic_albums"/>
 
@@ -34,13 +34,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/empty_txt"
-                android:layout_marginTop="15sp"
+                android:layout_marginTop="@dimen/margin_big"
                 android:layout_below="@id/empty_image"
                 android:layout_centerHorizontal="true"
-                android:padding="1dp"
+                android:padding="@dimen/one_dp"
                 android:text="@string/empty_state_main"
                 android:textColor="@color/text_color"
-                android:textSize="18sp"
+                android:textSize="@dimen/tittle_text_size"
                 android:textAlignment="viewStart"
                 android:maxLines="1"/>
 

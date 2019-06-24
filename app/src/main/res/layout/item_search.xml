@@ -20,8 +20,8 @@
 
         <andrej.com.musicmanagement.view.ImageLoaderImageView
             android:id="@+id/artist_img"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/image_adapter_size"
+            android:layout_height="@dimen/image_adapter_size"
             android:scaleType="centerCrop"
             app:placeHolder="@{model.placeholder}"
             app:url="@{model.artistImage}" />
@@ -30,17 +30,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_small"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/artist_name"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:padding="1dp"
+                android:padding="@dimen/one_dp"
                 android:text="@{model.artistName}"
                 tools:text="Eminem"
-                android:textSize="20sp"
+                android:textSize="@dimen/tittle_text_size"
                 android:textAlignment="viewStart"
                 android:textColor="@color/text_color"
                 android:maxLines="1" />
@@ -50,11 +50,11 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/artist_listeners"
                 android:layout_below="@id/artist_name"
-                android:padding="1dp"
+                android:padding="@dimen/one_dp"
                 android:text="@{model.artistListeners}"
                 tools:text="100000000"
                 android:textColor="@color/text_color"
-                android:textSize="18sp"
+                android:textSize="@dimen/tittle_text_size"
                 android:textAlignment="viewStart"
                 android:maxLines="1"/>
 

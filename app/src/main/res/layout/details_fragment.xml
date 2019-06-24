@@ -7,30 +7,30 @@
         android:id="@+id/root_item"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <andrej.com.musicmanagement.view.ImageLoaderImageView
             android:id="@+id/album_img"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="@dimen/image_size"
+            android:layout_height="@dimen/image_size"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_big"
             android:scaleType="centerCrop" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin_normal"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/album_name"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:padding="1dp"
+                android:padding="@dimen/one_dp"
                 android:layout_centerHorizontal="true"
                 tools:text="Recovery"
-                android:textSize="20sp"
+                android:textSize="@dimen/tittle_text_size"
                 android:textAlignment="center"
                 android:textColor="@color/text_color"
                 android:maxLines="1" />
@@ -41,10 +41,10 @@
                 android:id="@+id/album_artist"
                 android:layout_below="@id/album_name"
                 android:layout_centerHorizontal="true"
-                android:padding="1dp"
+                android:padding="@dimen/one_dp"
                 tools:text="Eminem"
                 android:textColor="@color/text_color"
-                android:textSize="18sp"
+                android:textSize="@dimen/tittle_text_size"
                 android:textAlignment="viewStart"
                 android:maxLines="1"/>
 
@@ -54,10 +54,10 @@
                 android:id="@+id/album_playcount"
                 android:layout_below="@id/album_artist"
                 android:layout_centerHorizontal="true"
-                android:padding="1dp"
+                android:padding="@dimen/one_dp"
                 tools:text="100000000"
                 android:textColor="@color/text_color"
-                android:textSize="18sp"
+                android:textSize="@dimen/tittle_text_size"
                 android:textAlignment="viewStart"
                 android:maxLines="1"/>
 
@@ -65,11 +65,11 @@
 
         <ImageView
             android:id="@+id/btn_favorite"
-            android:layout_width="60dp"
+            android:layout_width="@dimen/favorite_size"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin_normal"
             android:src="@drawable/btn_favorite_selector"
-            android:layout_height="60dp" />
+            android:layout_height="@dimen/favorite_size" />
 
     </LinearLayout>
 </layout>
