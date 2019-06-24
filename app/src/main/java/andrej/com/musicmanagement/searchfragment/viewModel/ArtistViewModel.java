@@ -42,14 +42,14 @@ public class ArtistViewModel extends BaseObservable {
 
     @Bindable
     public String getArtistImage() {
-        if (artist.getImage() != null && artist.getImage().get(0) != null && artist.getImage().get(0).getText()!=null) {
+        if (artist.getImage() != null && artist.getImage().get(0) != null && artist.getImage().get(0).getText() != null) {
             return artist.getImage().get(0).getText();
         }
         return "";
     }
 
     @Bindable
-    public Drawable getPlaceholder(){
+    public Drawable getPlaceholder() {
         return mContext.getResources().getDrawable(R.drawable.image_placeholder);
     }
 

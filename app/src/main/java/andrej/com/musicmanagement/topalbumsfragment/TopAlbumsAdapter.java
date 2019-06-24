@@ -25,8 +25,7 @@ public class TopAlbumsAdapter extends RecyclerView.Adapter<TopAlbumsAdapter.Hold
     private final LayoutInflater layoutInflater;
     private final ImageLoader imageLoader;
     private final Context mContext;
-    private final ImageLoader.LoadingBuilder imageLoadingBuilder = new ImageLoader.LoadingBuilder()
-            .setClearPrevState(true);
+    private final ImageLoader.LoadingBuilder imageLoadingBuilder = new ImageLoader.LoadingBuilder().setClearPrevState(true);
     private TopAlbumsAdapter.OnClickListener onItemClickListener;
     private List<Album> mData = new ArrayList<>();
 
@@ -54,8 +53,7 @@ public class TopAlbumsAdapter extends RecyclerView.Adapter<TopAlbumsAdapter.Hold
 
     @Override
     public TopAlbumsAdapter.Holder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new TopAlbumsAdapter.Holder((ItemTopAlbumBinding) DataBindingUtil.inflate(layoutInflater,
-                R.layout.item_top_album, parent, false));
+        return new TopAlbumsAdapter.Holder((ItemTopAlbumBinding) DataBindingUtil.inflate(layoutInflater, R.layout.item_top_album, parent, false));
     }
 
     @Override
@@ -64,7 +62,7 @@ public class TopAlbumsAdapter extends RecyclerView.Adapter<TopAlbumsAdapter.Hold
         if (viewModel == null) {
             viewModel = new TopAlbumViewModel();
         }
-        holder.bindingObject.setModel(viewModel.setArtist(mData.get(position),mContext));
+        holder.bindingObject.setModel(viewModel.setArtist(mData.get(position), mContext));
         holder.bindingObject.executePendingBindings();
     }
 
@@ -84,7 +82,7 @@ public class TopAlbumsAdapter extends RecyclerView.Adapter<TopAlbumsAdapter.Hold
 
         @Override
         public void onClick(View view) {
-            if(onItemClickListener!=null){
+            if (onItemClickListener != null) {
                 onItemClickListener.onItemClick(mData.get(getAdapterPosition()));
             }
         }

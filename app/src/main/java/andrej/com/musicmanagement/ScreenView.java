@@ -11,6 +11,7 @@ public interface ScreenView<T extends ScreenPresenter> {
 
     /**
      * Show message using Snackbar
+     *
      * @param message
      */
     void showMessage(String message);

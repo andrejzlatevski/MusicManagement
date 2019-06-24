@@ -20,7 +20,7 @@ import andrej.com.musicmanagement.data.topAlbumsPOJO.Album;
 import andrej.com.musicmanagement.databinding.DetailsFragmentBinding;
 import andrej.com.musicmanagement.view.ImageLoader;
 
-public class DetailsFragment extends BaseFragment<DetailsContract.Presenter> implements DetailsContract.View{
+public class DetailsFragment extends BaseFragment<DetailsContract.Presenter> implements DetailsContract.View {
 
     private static final String PROVIDED_ALBUM = "provided_album";
 
@@ -71,21 +71,21 @@ public class DetailsFragment extends BaseFragment<DetailsContract.Presenter> imp
     protected View bindView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mBindingObject = DataBindingUtil.inflate(inflater, R.layout.details_fragment, container, false);
         mAlbum = getArguments().getParcelable(PROVIDED_ALBUM);
-        if(mAlbum==null){
+        if (mAlbum == null) {
             conductor.goBack();
         }
         toolBarOwner.showTitle(mAlbum.getName());
         toolBarOwner.showBackButton();
         isSaved = false;
         presenter.checkIsAlbumFavorite(mAlbum);
-        if(mAlbum.getName()!=null){
+        if (mAlbum.getName() != null) {
             mBindingObject.albumName.setText(mAlbum.getName());
-        }else {
+        } else {
             mBindingObject.albumName.setText(getResources().getString(R.string.unknown_album));
         }
-        if(mAlbum.getAlbumArtist()!=null && mAlbum.getAlbumArtist().getName()!=null){
+        if (mAlbum.getAlbumArtist() != null && mAlbum.getAlbumArtist().getName() != null) {
             mBindingObject.albumArtist.setText(mAlbum.getAlbumArtist().getName());
-        }else {
+        } else {
             mBindingObject.albumArtist.setText(getResources().getString(R.string.unknown_artist));
         }
         mBindingObject.albumPlaycount.setText(String.valueOf(mAlbum.getPlaycount()));
@@ -93,9 +93,9 @@ public class DetailsFragment extends BaseFragment<DetailsContract.Presenter> imp
         mBindingObject.btnFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!isSaved){
+                if (!isSaved) {
                     presenter.saveAlbumToDatabase(mAlbum);
-                }else {
+                } else {
                     presenter.deleteAlbum(mAlbum);
                 }
             }
@@ -116,6 +116,6 @@ public class DetailsFragment extends BaseFragment<DetailsContract.Presenter> imp
 
     @Override
     public void notifyError(String error) {
-        Log.d(Constants.ERROR_TAG,error);
+        Log.d(Constants.ERROR_TAG, error);
     }
 }

@@ -8,12 +8,12 @@ import android.support.annotation.ColorRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
-import android.support.design.widget.Snackbar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -36,14 +36,12 @@ public abstract class BaseActivity extends DaggerAppCompatActivity {
             //Check Location service permissions and request if needed
             List<String> permissions = new ArrayList<>();
             for (String permission : permissionsList) {
-                if (ActivityCompat.checkSelfPermission(this, permission)
-                        != PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
                     permissions.add(permission);
                 }
             }
             if (permissions.size() != 0) {
-                ActivityCompat.requestPermissions(this, permissions.toArray(new String[permissions.size()]),
-                        request);
+                ActivityCompat.requestPermissions(this, permissions.toArray(new String[permissions.size()]), request);
                 return false;
             }
         }
@@ -54,8 +52,7 @@ public abstract class BaseActivity extends DaggerAppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         List<Fragment> fragments = getSupportFragmentManager().getFragments();
-        if (fragments == null)
-            return;
+        if (fragments == null) return;
         for (Fragment fragment : fragments) {
             fragment.onActivityResult(requestCode, resultCode, data);
         }
@@ -122,8 +119,7 @@ public abstract class BaseActivity extends DaggerAppCompatActivity {
     }
 
     protected void showProgressDialog(String title, String message, boolean modal) {
-        ProgressDialog.newInstance(title, message)
-                .setModal(modal).show(getSupportFragmentManager(), ProgressDialog.TAG);
+        ProgressDialog.newInstance(title, message).setModal(modal).show(getSupportFragmentManager(), ProgressDialog.TAG);
     }
 
     protected void hideProgressDialog() {

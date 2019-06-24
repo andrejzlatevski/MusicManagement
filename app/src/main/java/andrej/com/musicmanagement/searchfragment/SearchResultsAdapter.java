@@ -25,8 +25,7 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
     private final LayoutInflater layoutInflater;
     private final ImageLoader imageLoader;
     private final Context mContext;
-    private final ImageLoader.LoadingBuilder imageLoadingBuilder = new ImageLoader.LoadingBuilder()
-            .setClearPrevState(true);
+    private final ImageLoader.LoadingBuilder imageLoadingBuilder = new ImageLoader.LoadingBuilder().setClearPrevState(true);
     private SearchResultsAdapter.OnClickListener onItemClickListener;
     private List<Artist> mData = new ArrayList<>();
 
@@ -54,8 +53,7 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
 
     @Override
     public SearchResultsAdapter.Holder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new SearchResultsAdapter.Holder((ItemSearchBinding) DataBindingUtil.inflate(layoutInflater,
-                R.layout.item_search, parent, false));
+        return new SearchResultsAdapter.Holder((ItemSearchBinding) DataBindingUtil.inflate(layoutInflater, R.layout.item_search, parent, false));
     }
 
     @Override
@@ -64,7 +62,7 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
         if (viewModel == null) {
             viewModel = new ArtistViewModel();
         }
-        holder.bindingObject.setModel(viewModel.setArtist(mData.get(position),mContext));
+        holder.bindingObject.setModel(viewModel.setArtist(mData.get(position), mContext));
         holder.bindingObject.executePendingBindings();
     }
 
@@ -84,7 +82,7 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
 
         @Override
         public void onClick(View view) {
-            if(onItemClickListener!=null){
+            if (onItemClickListener != null) {
                 onItemClickListener.onItemClick(mData.get(getAdapterPosition()));
             }
         }

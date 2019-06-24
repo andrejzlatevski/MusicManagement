@@ -21,10 +21,9 @@ import andrej.com.musicmanagement.data.topAlbumsPOJO.Album;
 import andrej.com.musicmanagement.databinding.TopAlbumsFragmentBinding;
 import andrej.com.musicmanagement.decor.VerticalSpaceItemDecoration;
 import andrej.com.musicmanagement.detailsfragment.DetailsFragment;
-import andrej.com.musicmanagement.searchfragment.SearchResultsAdapter;
 import andrej.com.musicmanagement.view.ImageLoader;
 
-public class TopAlbumsFragment extends BaseFragment<TopAlbumsContract.Presenter> implements TopAlbumsContract.View, TopAlbumsAdapter.OnClickListener{
+public class TopAlbumsFragment extends BaseFragment<TopAlbumsContract.Presenter> implements TopAlbumsContract.View, TopAlbumsAdapter.OnClickListener {
 
     private static final String PROVIDED_ARTIST = "provided_artist";
 
@@ -75,17 +74,16 @@ public class TopAlbumsFragment extends BaseFragment<TopAlbumsContract.Presenter>
     @Override
     protected View bindView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mBindingObject = DataBindingUtil.inflate(inflater, R.layout.top_albums_fragment, container, false);
-        artist = getArguments().getString(PROVIDED_ARTIST,"");
-        toolBarOwner.showTitle(getString(R.string.search_albums,artist));
+        artist = getArguments().getString(PROVIDED_ARTIST, "");
+        toolBarOwner.showTitle(getString(R.string.search_albums, artist));
         toolBarOwner.showBackButton();
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         mBindingObject.albums.setLayoutManager(llm);
         mBindingObject.albums.addItemDecoration(new VerticalSpaceItemDecoration((int) getResources().getDimension(R.dimen.margin_small)));
-        mBindingObject.albums.setAdapter(mAlbumsAdapter = new TopAlbumsAdapter(getContext(), imageLoader)
-                .setClickListener(this));
+        mBindingObject.albums.setAdapter(mAlbumsAdapter = new TopAlbumsAdapter(getContext(), imageLoader).setClickListener(this));
         presenter.getTopAlbums(artist);
-        showProgressDialog("",getResources().getString(R.string.searching_albums));
+        showProgressDialog("", getResources().getString(R.string.searching_albums));
         return mBindingObject.getRoot();
     }
 

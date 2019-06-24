@@ -13,7 +13,8 @@ public class ArtistConverter {
 
     @TypeConverter
     public static AlbumArtist fromStringToArtist(String value) {
-        Type listType = new TypeToken<AlbumArtist>() {}.getType();
+        Type listType = new TypeToken<AlbumArtist>() {
+        }.getType();
         return new Gson().fromJson(value, listType);
     }
 

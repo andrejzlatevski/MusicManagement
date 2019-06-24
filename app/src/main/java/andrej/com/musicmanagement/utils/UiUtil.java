@@ -24,8 +24,7 @@ public class UiUtil {
     }
 
     public static void openKeyboard(Context activity, View v) {
-        InputMethodManager imm = (InputMethodManager)
-                activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.showSoftInput(v, InputMethodManager.SHOW_FORCED);
     }
 

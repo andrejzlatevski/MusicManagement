@@ -55,14 +55,14 @@ public abstract class BaseFragment<T extends ScreenPresenter> extends DaggerFrag
 
     @Override
     public void showToastMessage(String message) {
-        if((BaseActivity) getActivity() !=null){
+        if ((BaseActivity) getActivity() != null) {
             ((BaseActivity) getActivity()).showToastMessage(message);
         }
     }
 
     @Override
     public void showToastMessage(int message) {
-        if((BaseActivity)getActivity() !=null){
+        if ((BaseActivity) getActivity() != null) {
             ((BaseActivity) getActivity()).showToastMessage(message);
         }
     }
@@ -89,21 +89,21 @@ public abstract class BaseFragment<T extends ScreenPresenter> extends DaggerFrag
 
     @Override
     public void showProgressDialog(String title, String message) {
-        if((BaseActivity)getActivity() !=null){
+        if ((BaseActivity) getActivity() != null) {
             ((BaseActivity) getActivity()).showProgressDialog(title, message);
         }
     }
 
     @Override
     public void showProgressDialog(@StringRes int titleRes, @StringRes int messageRes) {
-        if((BaseActivity)getActivity() !=null){
+        if ((BaseActivity) getActivity() != null) {
             ((BaseActivity) getActivity()).showProgressDialog(titleRes, messageRes);
         }
     }
 
     @Override
     public void hideProgressDialog() {
-        if((BaseActivity)getActivity() !=null){
+        if ((BaseActivity) getActivity() != null) {
             ((BaseActivity) getActivity()).hideProgressDialog();
         }
     }

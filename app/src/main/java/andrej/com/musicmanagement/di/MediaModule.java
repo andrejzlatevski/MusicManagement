@@ -16,7 +16,7 @@ public abstract class MediaModule {
     @Provides
     @Singleton
     public static ImageLoader provideImageLoader(GlideImageLoaderImpl imageLoader) {
-        if(mWrappedResourceReleaseListener==null){
+        if (mWrappedResourceReleaseListener == null) {
             mWrappedResourceReleaseListener = new GlideWrappedResourceReleaseListener();
         }
         mWrappedResourceReleaseListener.setupWith(imageLoader);

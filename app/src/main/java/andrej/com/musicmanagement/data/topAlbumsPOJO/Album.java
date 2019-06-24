@@ -7,14 +7,15 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 import andrej.com.musicmanagement.Constants;
 
 @Entity(tableName = Constants.TABLE_NAME)
-public class Album implements Parcelable{
+public class Album implements Parcelable {
 
     @SerializedName("name")
     @Expose
@@ -60,7 +61,7 @@ public class Album implements Parcelable{
         }
         mbid = in.readString();
         url = in.readString();
-        in.readList(albumImage,AlbumImage.class.getClassLoader());
+        in.readList(albumImage, AlbumImage.class.getClassLoader());
     }
 
     public static final Creator<Album> CREATOR = new Creator<Album>() {

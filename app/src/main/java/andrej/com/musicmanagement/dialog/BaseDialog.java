@@ -1,4 +1,5 @@
 package andrej.com.musicmanagement.dialog;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -42,13 +43,13 @@ public abstract class BaseDialog extends DialogFragment {
     protected final void composeResult(int requestCode, int resultCode, Intent intent) {
         if (getTargetFragment() != null) {
             if (getTargetFragment() instanceof BaseDialog.DialogListener) {
-                ((BaseDialog.DialogListener)getTargetFragment()).onDialogResult(getTargetRequestCode(), resultCode, null);
+                ((BaseDialog.DialogListener) getTargetFragment()).onDialogResult(getTargetRequestCode(), resultCode, null);
             } else {
                 getTargetFragment().onActivityResult(getTargetRequestCode(), resultCode, null);
             }
         } else {
-            if(getActivity() instanceof DialogListener){
-                ((DialogListener)getActivity()).onDialogResult(requestCode, resultCode, intent);
+            if (getActivity() instanceof DialogListener) {
+                ((DialogListener) getActivity()).onDialogResult(requestCode, resultCode, intent);
             }
         }
         dismiss();

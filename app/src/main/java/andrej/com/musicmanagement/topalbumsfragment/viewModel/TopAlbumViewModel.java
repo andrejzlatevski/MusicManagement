@@ -42,14 +42,14 @@ public class TopAlbumViewModel extends BaseObservable {
 
     @Bindable
     public String getAlbumImage() {
-        if (album.getAlbumImage() != null && album.getAlbumImage().get(0) != null && album.getAlbumImage().get(0).getText()!=null) {
+        if (album.getAlbumImage() != null && album.getAlbumImage().get(0) != null && album.getAlbumImage().get(0).getText() != null) {
             return album.getAlbumImage().get(0).getText();
         }
         return "";
     }
 
     @Bindable
-    public Drawable getPlaceholder(){
+    public Drawable getPlaceholder() {
         return mContext.getResources().getDrawable(R.drawable.image_placeholder);
     }
 }

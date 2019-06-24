@@ -31,7 +31,7 @@ import andrej.com.musicmanagement.decor.VerticalSpaceItemDecoration;
 import andrej.com.musicmanagement.topalbumsfragment.TopAlbumsFragment;
 import andrej.com.musicmanagement.view.ImageLoader;
 
-public class SearchFragment extends BaseFragment<SearchContract.Presenter> implements SearchContract.View, SearchResultsAdapter.OnClickListener{
+public class SearchFragment extends BaseFragment<SearchContract.Presenter> implements SearchContract.View, SearchResultsAdapter.OnClickListener {
 
     public static BaseFragment createInstance() {
         SearchFragment fragment = new SearchFragment();
@@ -72,8 +72,7 @@ public class SearchFragment extends BaseFragment<SearchContract.Presenter> imple
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mResultsAdapter = new SearchResultsAdapter(getContext(), imageLoader)
-                .setClickListener(this);
+        mResultsAdapter = new SearchResultsAdapter(getContext(), imageLoader).setClickListener(this);
         setHasOptionsMenu(true);
     }
 
@@ -87,7 +86,7 @@ public class SearchFragment extends BaseFragment<SearchContract.Presenter> imple
         mBindingObject.artists.setLayoutManager(llm);
         mBindingObject.artists.addItemDecoration(new VerticalSpaceItemDecoration((int) getResources().getDimension(R.dimen.margin_small)));
         mBindingObject.artists.setAdapter(mResultsAdapter);
-        if(mResultsAdapter.getItemCount()>0){
+        if (mResultsAdapter.getItemCount() > 0) {
             mBindingObject.emptyState.setVisibility(View.GONE);
         }
         return mBindingObject.getRoot();
@@ -129,15 +128,14 @@ public class SearchFragment extends BaseFragment<SearchContract.Presenter> imple
                         searchView.setQuery(query, false);
                         isQueryTextSubmit = false;
                         presenter.getArtist(query);
-                        showProgressDialog("",getResources().getString(R.string.searching_artists));
+                        showProgressDialog("", getResources().getString(R.string.searching_artists));
                     }
                     return false;
                 }
 
                 @Override
                 public boolean onQueryTextChange(String query) {
-                    if (isQueryTextSubmit)
-                        return false;
+                    if (isQueryTextSubmit) return false;
                     return false;
                 }
             });
@@ -148,7 +146,7 @@ public class SearchFragment extends BaseFragment<SearchContract.Presenter> imple
     @Override
     public void notifyArtistsLoaded(List<Artist> artists) {
         hideProgressDialog();
-        if(artists.size()>0){
+        if (artists.size() > 0) {
             mBindingObject.emptyState.setVisibility(View.GONE);
         }
         mResultsAdapter.add(artists);

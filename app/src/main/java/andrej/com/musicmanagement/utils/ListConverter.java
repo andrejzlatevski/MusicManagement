@@ -18,7 +18,8 @@ public class ListConverter {
         if (value == null) {
             return new ArrayList<>();
         }
-        Type listType = new TypeToken<List<AlbumImage>>() {}.getType();
+        Type listType = new TypeToken<List<AlbumImage>>() {
+        }.getType();
         return gson.fromJson(value, listType);
     }
 

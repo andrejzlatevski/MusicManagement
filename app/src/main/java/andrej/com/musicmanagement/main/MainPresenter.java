@@ -38,21 +38,17 @@ public final class MainPresenter extends BaseScreenPresenter<MainContract.View> 
 
     @Override
     public void getAllAlbums() {
-        compositeDisposable.addAll(albumsRepository
-                .getAlbumsFromDB()
-                .subscribeOn(schedulerProviderManager.io())
-                .observeOn(schedulerProviderManager.ui())
-                .subscribe(new Consumer<List<Album>>() {
+        compositeDisposable.addAll(albumsRepository.getAlbumsFromDB().subscribeOn(schedulerProviderManager.io()).observeOn(schedulerProviderManager.ui()).subscribe(new Consumer<List<Album>>() {
             @Override
             public void accept(List<Album> albums) throws Exception {
-                if(getView()!=null){
+                if (getView() != null) {
                     getView().notifyAlbumsLoaded(albums);
                 }
             }
         }, new Consumer<Throwable>() {
             @Override
             public void accept(Throwable throwable) throws Exception {
-                if(getView()!=null){
+                if (getView() != null) {
                     getView().notifyAlbimsLoadingError(throwable.getMessage());
                 }
             }

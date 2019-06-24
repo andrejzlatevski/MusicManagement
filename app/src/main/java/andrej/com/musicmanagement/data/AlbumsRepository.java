@@ -27,11 +27,11 @@ public class AlbumsRepository {
         albumsDAO.insertAlbum(album);
     }
 
-    public void deleteAlbum(Album album){
+    public void deleteAlbum(Album album) {
         albumsDAO.deleteAlbum(album);
     }
 
-    public Single<Album> checkAlbumFavorite(String id){
+    public Single<Album> checkAlbumFavorite(String id) {
         return albumsDAO.isAlbumInFavorites(id);
     }
 }

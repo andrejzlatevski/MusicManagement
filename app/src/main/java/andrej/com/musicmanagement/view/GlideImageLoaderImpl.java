@@ -118,13 +118,11 @@ public final class GlideImageLoaderImpl implements ImageLoader, ImageLoader.OnRe
     }
 
     private RequestBuilder createRequest(LoadingBuilder loadingBuilder) {
-        return (loadingBuilder.getUri() != null) ? requestManager.load(loadingBuilder.getUri().getPath()) :
-                requestManager.load(loadingBuilder.getUrl());
+        return (loadingBuilder.getUri() != null) ? requestManager.load(loadingBuilder.getUri().getPath()) : requestManager.load(loadingBuilder.getUrl());
     }
 
     private RequestBuilder createBitmapRequest(LoadingBuilder loadingBuilder) {
-        return (loadingBuilder.getUri() != null) ? requestManager.asBitmap().load(loadingBuilder.getUri().getPath()) :
-                requestManager.asBitmap().load(loadingBuilder.getUrl());
+        return (loadingBuilder.getUri() != null) ? requestManager.asBitmap().load(loadingBuilder.getUri().getPath()) : requestManager.asBitmap().load(loadingBuilder.getUrl());
     }
 
     private RequestOptions createRequestOptions(LoadingBuilder loadingBuilder, ImageView view) {
@@ -135,8 +133,7 @@ public final class GlideImageLoaderImpl implements ImageLoader, ImageLoader.OnRe
             requestOptions = requestOptions.placeholder(loadingBuilder.getPlaceHolderDrawable());
         }
         if (loadingBuilder.getOutputBounds() != null) {
-            requestOptions = requestOptions.override(loadingBuilder.getOutputBounds().getWidth(),
-                    loadingBuilder.getOutputBounds().getHeight());
+            requestOptions = requestOptions.override(loadingBuilder.getOutputBounds().getWidth(), loadingBuilder.getOutputBounds().getHeight());
         }
         if (loadingBuilder.isCenterCrop() || (view != null && view.getScaleType() == ImageView.ScaleType.CENTER_CROP)) {
             requestOptions = requestOptions.centerCrop();
@@ -164,8 +161,7 @@ public final class GlideImageLoaderImpl implements ImageLoader, ImageLoader.OnRe
         RequestOptions requestOptions = new RequestOptions();
         Collection<Transformation<Bitmap>> transformations = new ArrayList<>();
         if (loadingBuilder.getOutputBounds() != null) {
-            transformations.add(new CropTransformation(loadingBuilder.getOutputBounds().getWidth(),
-                    loadingBuilder.getOutputBounds().getHeight()));
+            transformations.add(new CropTransformation(loadingBuilder.getOutputBounds().getWidth(), loadingBuilder.getOutputBounds().getHeight()));
         }
         if (loadingBuilder.isCenterCrop()) {
             transformations.add(new CenterCrop());

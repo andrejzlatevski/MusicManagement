@@ -2,7 +2,6 @@ package andrej.com.musicmanagement;
 
 import android.content.Context;
 
-
 import andrej.com.musicmanagement.di.ApplicationComponent;
 import andrej.com.musicmanagement.di.DaggerApplicationComponent;
 import dagger.android.AndroidInjector;

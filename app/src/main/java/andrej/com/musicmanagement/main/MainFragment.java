@@ -29,7 +29,7 @@ import andrej.com.musicmanagement.searchfragment.SearchFragment;
 import andrej.com.musicmanagement.topalbumsfragment.TopAlbumsAdapter;
 import andrej.com.musicmanagement.view.ImageLoader;
 
-public class MainFragment extends BaseFragment<MainContract.Presenter> implements MainContract.View, TopAlbumsAdapter.OnClickListener{
+public class MainFragment extends BaseFragment<MainContract.Presenter> implements MainContract.View, TopAlbumsAdapter.OnClickListener {
 
     public static BaseFragment createInstance() {
         MainFragment fragment = new MainFragment();
@@ -82,8 +82,7 @@ public class MainFragment extends BaseFragment<MainContract.Presenter> implement
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         mBindingObject.albums.setLayoutManager(llm);
         mBindingObject.albums.addItemDecoration(new VerticalSpaceItemDecoration((int) getResources().getDimension(R.dimen.margin_small)));
-        mBindingObject.albums.setAdapter(mAlbumsAdapter = new TopAlbumsAdapter(getContext(), imageLoader)
-                .setClickListener(this));
+        mBindingObject.albums.setAdapter(mAlbumsAdapter = new TopAlbumsAdapter(getContext(), imageLoader).setClickListener(this));
         presenter.getAllAlbums();
         return mBindingObject.getRoot();
     }
@@ -106,7 +105,7 @@ public class MainFragment extends BaseFragment<MainContract.Presenter> implement
 
     @Override
     public void notifyAlbumsLoaded(List<Album> albums) {
-        if(albums.size()>0){
+        if (albums.size() > 0) {
             mBindingObject.emptyState.setVisibility(View.GONE);
         }
         mAlbumsAdapter.add(albums);

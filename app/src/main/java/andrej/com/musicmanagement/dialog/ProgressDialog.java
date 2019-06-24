@@ -11,7 +11,7 @@ public class ProgressDialog extends DialogFragment {
     private static final String PROVIDED_MESSAGE = "provided_message";
     private static final String PROVIDED_MODE = "provided_mode";
 
-    public static ProgressDialog newInstance(String title, String message){
+    public static ProgressDialog newInstance(String title, String message) {
         ProgressDialog dialogFragment = new ProgressDialog();
         Bundle bundle = new Bundle();
         bundle.putString(PROVIDED_TITLE, title);
@@ -21,7 +21,7 @@ public class ProgressDialog extends DialogFragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         boolean isModal = getArguments().getBoolean(PROVIDED_MODE, false);
         setCancelable(!isModal);
@@ -37,7 +37,7 @@ public class ProgressDialog extends DialogFragment {
         return dialog;
     }
 
-    public ProgressDialog setModal(boolean value){
+    public ProgressDialog setModal(boolean value) {
         getArguments().putBoolean(PROVIDED_MODE, value);
         return this;
     }

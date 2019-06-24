@@ -2,12 +2,12 @@ package andrej.com.musicmanagement.main;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -61,8 +61,7 @@ public class MainActivity extends BaseActivity implements Conductor<BaseFragment
         List<Fragment> fragments = fragmentManager.getFragments();
         if (fragments != null) {
             for (Fragment fragment : fragments) {
-                if (fragment instanceof BaseFragment &&
-                        ((BaseFragment) fragment).getScreenTag().equals(targetFragment.getScreenTag())) {
+                if (fragment instanceof BaseFragment && ((BaseFragment) fragment).getScreenTag().equals(targetFragment.getScreenTag())) {
                     break;
                 }
                 fragmentManager.popBackStack();
@@ -133,9 +132,8 @@ public class MainActivity extends BaseActivity implements Conductor<BaseFragment
         if (isRootFragment) {
             //Clean back stack if any
             getSupportFragmentManager().popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-        }else {
-            fragmentTransaction.setCustomAnimations(appearanceAnimation, disappearanceAnimation,
-                    popAppearanceAnimation, popDisappearanceAnimation);
+        } else {
+            fragmentTransaction.setCustomAnimations(appearanceAnimation, disappearanceAnimation, popAppearanceAnimation, popDisappearanceAnimation);
             fragmentTransaction.addToBackStack(fragment.getScreenTag());
         }
         fragmentTransaction.replace(R.id.container, mCurrFragment = fragment, fragment.getScreenTag());

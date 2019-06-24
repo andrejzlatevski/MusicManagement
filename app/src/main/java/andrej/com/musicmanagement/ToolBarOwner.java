@@ -2,7 +2,6 @@ package andrej.com.musicmanagement;
 
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
-import android.view.View;
 
 public interface ToolBarOwner {
 
