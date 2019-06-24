@@ -1,8 +1,5 @@
 package andrej.com.musicmanagement.searchfragment;
 
-import android.support.annotation.NonNull;
-import android.util.Log;
-
 import javax.inject.Inject;
 
 import andrej.com.musicmanagement.Constants;
@@ -13,9 +10,6 @@ import andrej.com.musicmanagement.data.artistSearchPOJO.Example;
 import andrej.com.musicmanagement.manager.SchedulerProviderManager;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class SearchPresenter extends BaseScreenPresenter<SearchContract.View> implements SearchContract.Presenter {
 

@@ -2,9 +2,6 @@ package andrej.com.musicmanagement.detailsfragment;
 
 import android.content.Context;
 
-import java.util.List;
-import java.util.concurrent.Callable;
-
 import javax.inject.Inject;
 
 import andrej.com.musicmanagement.R;
@@ -14,7 +11,6 @@ import andrej.com.musicmanagement.data.topAlbumsPOJO.Album;
 import andrej.com.musicmanagement.manager.SchedulerProviderManager;
 import io.reactivex.Completable;
 import io.reactivex.CompletableObserver;
-import io.reactivex.Single;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;

@@ -10,9 +10,6 @@ import andrej.com.musicmanagement.data.topAlbumsPOJO.ExampleAlbums;
 import andrej.com.musicmanagement.manager.SchedulerProviderManager;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class TopAlbumsPresenter extends BaseScreenPresenter<TopAlbumsContract.View> implements TopAlbumsContract.Presenter {
 

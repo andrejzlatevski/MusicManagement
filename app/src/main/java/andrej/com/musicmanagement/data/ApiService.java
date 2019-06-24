@@ -3,7 +3,6 @@ package andrej.com.musicmanagement.data;
 import andrej.com.musicmanagement.data.artistSearchPOJO.Example;
 import andrej.com.musicmanagement.data.topAlbumsPOJO.ExampleAlbums;
 import io.reactivex.Single;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 

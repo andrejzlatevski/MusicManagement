@@ -4,12 +4,10 @@ import android.content.Context;
 import android.databinding.BindingMethod;
 import android.databinding.BindingMethods;
 import android.graphics.Bitmap;
-import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.view.Display;
 
 import javax.inject.Inject;
 

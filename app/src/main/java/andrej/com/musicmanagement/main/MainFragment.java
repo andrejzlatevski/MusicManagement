@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,19 +21,13 @@ import andrej.com.musicmanagement.R;
 import andrej.com.musicmanagement.ToolBarOwner;
 import andrej.com.musicmanagement.base.BaseFragment;
 import andrej.com.musicmanagement.data.ApiService;
-import andrej.com.musicmanagement.data.artistSearchPOJO.Example;
 import andrej.com.musicmanagement.data.topAlbumsPOJO.Album;
-import andrej.com.musicmanagement.data.topAlbumsPOJO.ExampleAlbums;
 import andrej.com.musicmanagement.databinding.MainFragmentBinding;
 import andrej.com.musicmanagement.decor.VerticalSpaceItemDecoration;
 import andrej.com.musicmanagement.detailsfragment.DetailsFragment;
 import andrej.com.musicmanagement.searchfragment.SearchFragment;
 import andrej.com.musicmanagement.topalbumsfragment.TopAlbumsAdapter;
 import andrej.com.musicmanagement.view.ImageLoader;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 
 public class MainFragment extends BaseFragment<MainContract.Presenter> implements MainContract.View, TopAlbumsAdapter.OnClickListener{
 
